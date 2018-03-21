@@ -7,7 +7,6 @@ import weightedstats as ws
 import requests
 
 from cryptopia import Cryptopia
-from cryptobridge import cryptobridge_api_query
 
 eCoinsMarkets = 1
 eCryptopia = 2
