@@ -7,6 +7,9 @@ import weightedstats as ws
 import requests
 
 from cryptopia import Cryptopia
+from .cryptobridge import *
+from .bittrex_price import get_bittrex_price
+
 
 eCoinsMarkets = 1
 eCryptopia = 2
@@ -134,7 +137,6 @@ def get_cryptobridge_price_gen():
             pass  # just get previous call from cache
         else:
             items = cryptobridge_api_query('ticker')
-            print(items)
             cache['last_call'] = time.time()
             cache['result'] = items
 
