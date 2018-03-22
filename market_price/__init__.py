@@ -75,7 +75,7 @@ def how_much_if_sell_all_coins(market, amount_to_sell):
 def get_stocks_exchange_price_gen():
 
     cache = {
-        'last_call': time.time() - 10,
+        'last_call': time.time() - 16,
         'result': []
     }
 
@@ -108,7 +108,7 @@ def get_stocks_exchange_price_gen():
         if ret:
             return float(ret[0])
         else:
-            msg = "Error getting price from Stocks.Exchange. Market {} doesn't exist in  Stocks.Exchange"
+            msg = "Error getting price from Stocks.Exchange. Market {} doesn't exist in Stocks.Exchange"
             raise Exception(msg.format(market))
 
     return get_stocks_exchange_price
@@ -119,7 +119,7 @@ get_stocks_exchange_price = get_stocks_exchange_price_gen()
 
 def get_cryptobridge_price_gen():
     cache = {
-        'last_call': time.time() - 10,
+        'last_call': time.time() - 16,
         'result': []
     }
 
