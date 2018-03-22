@@ -13,6 +13,7 @@ eCryptopia = 2
 eOutletbit = 3
 eStocksExchange = 4
 eCryptoBridge = 5
+eBittrex = 6
 
 
 EXCHANGES = (
@@ -20,7 +21,8 @@ EXCHANGES = (
     (eCryptopia, 'Cryptopia'),
     (eOutletbit, 'Outletbit'),
     (eStocksExchange, 'StocksExchange'),
-    (eCryptoBridge, 'Crypto Bridge')
+    (eCryptoBridge, 'Crypto Bridge'),
+    (eBittrex, 'Bittrex')
 )
 
 
@@ -154,6 +156,7 @@ def get_average_price(exchange, market, hm_orders=5, book='Buy'):
         eCryptopia: get_cryptopia_price,
         eStocksExchange: get_stocks_exchange_price,
         eCryptoBridge: get_cryptobridge_price,
+        eBittrex: get_bittrex_price,
     }
     func = price_functions.get(exchange)
     if func is None:
